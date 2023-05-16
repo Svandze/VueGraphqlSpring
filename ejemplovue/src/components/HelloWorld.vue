@@ -3,17 +3,20 @@
     <li v-for="pokemon in pokemons" :key="pokemon.pokemonId">
       {{ pokemon.nombre }} - {{ pokemon.nivel }} - {{ pokemon.tipo }}
     </li>
-    <button @click="iniciarBatalla">Iniciar Batalla Pokémon</button>
+    
+    
+    
 
-    <div v-if="ganador">
+  </div>
+  <br>
+  <button @click="iniciarBatalla"  class="btn-pokemon">Iniciar Batalla Pokémon</button>
+  <div v-if="ganador">
       <h3>Ganador de la batalla:</h3>
       <p>Nombre: {{ ganador.nombre }}</p>
       <p>Nombre: {{ ganador.tipo }}</p>
       <p>Nombre: {{ ganador.nivel }}</p>
 
     </div>
-
-  </div>
 </template>
 
 <script>
@@ -108,5 +111,14 @@ li {
 
 a {
   color: #42b983;
+}
+
+.btn-pokemon {
+  background-color: transparent;
+  color: #4CAF50;
+  padding: 10px 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>
