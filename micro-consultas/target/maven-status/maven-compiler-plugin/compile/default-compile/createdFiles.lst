@@ -1,0 +1,13 @@
+com\example\graphql\repository\EntrenadorRepository.class
+com\example\graphql\resolver\PokemonResolver.class
+com\example\graphql\resolver\QueryResolver.class
+com\example\graphql\exception\PokemonNotFoundException.class
+com\example\graphql\model\Pokemon$PokemonBuilder.class
+com\example\graphql\exception\GraphQLErrorAdapter.class
+com\example\graphql\repository\PokemonRepository.class
+com\example\graphql\resolver\MutationResolver.class
+com\example\graphql\Application$1.class
+com\example\graphql\model\Entrenador$EntrenadorBuilder.class
+com\example\graphql\model\Pokemon.class
+com\example\graphql\model\Entrenador.class
+com\example\graphql\Application.class
