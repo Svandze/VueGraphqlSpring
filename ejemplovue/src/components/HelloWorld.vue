@@ -5,6 +5,17 @@
     </li>
     <button @click="iniciarBatalla">Iniciar Batalla Pokémon</button>
 
+    <div v-if="pokemon1 && pokemon2">
+      <h3>Pokémones en batalla:</h3>
+      <p>Nombre: {{ pokemon1.nombre }}</p>
+      <p>Tipo: {{ pokemon1.tipo }}</p>
+      <p>Nivel: {{ pokemon1.nivel }}</p>
+
+      <p>Nombre: {{ pokemon2.nombre }}</p>
+      <p>Tipo: {{ pokemon2.tipo }}</p>
+      <p>Nivel: {{ pokemon2.nivel }}</p>
+    </div>
+
     <div v-if="ganador">
       <h3>Ganador de la batalla:</h3>
       <p>Nombre: {{ ganador.nombre }}</p>
@@ -24,7 +35,9 @@ export default {
   data() {
     return {
       pokemons: [],
-      ganador: null
+      ganador: null,
+      pokemon1: null,
+      pokemon2: null
     };
   },
   methods: {
@@ -57,8 +70,9 @@ export default {
 
         const batalla = response.data.data.batallaPokemon;
         console.log(batalla);
-
         this.ganador = batalla.ganador;
+        this.pokemon1 = batalla.pokemon1;
+        this.pokemon2 = batalla.pokemon2;
       } catch (error) {
         console.error(error);
       }
