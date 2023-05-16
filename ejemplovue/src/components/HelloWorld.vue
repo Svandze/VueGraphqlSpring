@@ -7,10 +7,11 @@
 
     <div v-if="pokemon1 && pokemon2">
       <h3>Pokémones en batalla:</h3>
+      <h3>Pokemon 1:</h3>
       <p>Nombre: {{ pokemon1.nombre }}</p>
       <p>Tipo: {{ pokemon1.tipo }}</p>
       <p>Nivel: {{ pokemon1.nivel }}</p>
-
+      <h3>Pokemon 2:</h3>
       <p>Nombre: {{ pokemon2.nombre }}</p>
       <p>Tipo: {{ pokemon2.tipo }}</p>
       <p>Nivel: {{ pokemon2.nivel }}</p>
