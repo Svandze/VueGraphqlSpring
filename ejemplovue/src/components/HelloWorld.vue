@@ -1,30 +1,23 @@
 <template>
-  
   <div>
-    <ul>
-      <li v-for="pokemon in pokemons" :key="pokemon.pokemonId">
-        {{ pokemon.nombre }} - {{ pokemon.nivel }} - {{ pokemon.tipo }}
-      </li>
-    </ul>
-    
-    <br>
-    
-    <button @click="iniciarBatalla" class="btn-pokemon">Iniciar Batalla Pokémon</button>
-  
-    <div class="pokemon-box">
-      <div>
-        <p>Nombre: {{ pokemon.nombre }}</p>
-      </div>
-      <div>
-        <p>Nivel: {{ pokemon.nivel }}</p>
-      </div>
-      <div>
-        <p>Tipo: {{ pokemon.tipo }}</p>
-      </div>
+    <li v-for="pokemon in pokemons" :key="pokemon.pokemonId">
+  <div class="pokemon-box">
+    <div>
+      <p>Nombre:{{ pokemon.nombre }}</p>
+    </div>
+    <div>
+      <p>nivel: {{ pokemon.nivel }}</p>
+    </div>
+    <div>
+      <p>tipo: {{ pokemon.tipo }}</p>
     </div>
   </div>
+</li>
+
 <br>
-    <div v-if="pokemon1 && pokemon2">
+  <button @click="iniciarBatalla" class="btn-pokemon">Iniciar Batalla Pokémon</button>
+  <br>  
+  <div  class="pokemon-box-2"  v-if="pokemon1 && pokemon2">
       <h3>Pokémones en batalla:</h3>
       <h3>Pokemon 1:</h3>
       <p>Nombre: {{ pokemon1.nombre }}</p>
@@ -35,15 +28,16 @@
       <p>Tipo: {{ pokemon2.tipo }}</p>
       <p>Nivel: {{ pokemon2.nivel }}</p>
     </div>
-    
-    <div v-if="ganador">
-    <h3>Ganador de la batalla:</h3>
-      <p>Nombre: {{ ganador.nombre }}</p>
-      <p>Nombre: {{ ganador.tipo }}</p>
-      <p>Nombre: {{ ganador.nivel }}</p>
-    </div>
- 
 
+    <div class="pokemon-box-2" v-if="ganador">
+      <h3>Ganador de la batalla:</h3>
+      <p>Nombre: {{ ganador.nombre }}</p>
+      <p>tipo: {{ ganador.tipo }}</p>
+      <p>Nivel: {{ ganador.nivel }}</p>
+
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -151,11 +145,25 @@ a {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.btn-pokemon:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 </style>
 <style>
   .pokemon-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #4CAF50;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f2f2f2; /* Color de fondo */
+  color: #333; /* Color del texto */
+  }
+  .pokemon-box-2 {
+    border: 1px solid #4CAF50;
+  padding: 20px; /* Ajusta el tamaño del padding según tus preferencias */
+  margin: 10px; /* Ajusta el tamaño del margen según tus preferencias */
+  background-color: #d7f2d9; /* Cambia el color de fondo a un verde más claro */
+  color: #333; /* Color del texto */
   }
 </style>
