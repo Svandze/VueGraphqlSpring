@@ -12,12 +12,13 @@ import com.example.graphql.exception.PokemonNotFoundException;
 import com.example.graphql.model.Pokemon;
 import com.example.graphql.repository.EntrenadorRepository;
 import com.example.graphql.repository.PokemonRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MutationResolver implements GraphQLMutationResolver {
 
     Random random = new Random();

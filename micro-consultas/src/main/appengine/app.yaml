@@ -1,0 +1,12 @@
+runtime: java11
+service: consultas
+
+env_variables:
+  SPRING_PROFILES_ACTIVE: production
+
+handlers:
+  - url: /.*
+    script: auto
+
+manual_scaling:
+  instances: 1

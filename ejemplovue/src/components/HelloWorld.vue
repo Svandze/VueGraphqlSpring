@@ -56,7 +56,7 @@ export default {
   methods: {
     async iniciarBatalla() {
       try {
-        const response = await axios.post("http://localhost:8088/apis/graphql", {
+        const response = await axios.post("https://batallas-dot-crack-photon-385921.ue.r.appspot.com/apis/graphql", {
           query: `
           mutation {
   batallaPokemon {
@@ -92,7 +92,7 @@ export default {
     },
     async batallaPokemon() {
       try {
-        const response = await axios.post("http://localhost:8087/apis/graphql", {
+        const response = await axios.post("https://consultas-dot-crack-photon-385921.ue.r.appspot.com/apis/graphql", {
           query: `
             query {
               findAllPokemons {

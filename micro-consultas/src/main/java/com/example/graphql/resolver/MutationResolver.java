@@ -8,7 +8,9 @@ import com.example.graphql.exception.PokemonNotFoundException;
 import com.example.graphql.model.Pokemon;
 import com.example.graphql.repository.EntrenadorRepository;
 import com.example.graphql.repository.PokemonRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MutationResolver implements GraphQLMutationResolver {
 
     @Autowired

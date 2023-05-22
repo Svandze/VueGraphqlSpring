@@ -17,8 +17,10 @@ import com.example.graphql.resolver.QueryResolver;
 import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
 import graphql.servlet.GraphQLErrorHandler;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class Application {
 
     public static void main(String[] args) {

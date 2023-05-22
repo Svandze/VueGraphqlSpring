@@ -12,6 +12,7 @@
 	<description>graphql-springboot-mongodb-example</description>
 
 
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -24,6 +25,7 @@
 		<java.version>8</java.version>
 		<graphql.version>5.0.2</graphql.version>
 		<graphql-java-tools.version>5.2.4</graphql-java-tools.version>
+		<appengine.maven.plugin.version>2.4.0</appengine.maven.plugin.version>
 	</properties>
 
 
@@ -76,6 +78,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>${appengine.maven.plugin.version}</version>
+				<configuration>
+					<version>1</version> <!-- Puedes especificar la versión del servicio en GAE -->
+					<projectId>crack-photon-385921</projectId> <!-- Especifica tu ID de proyecto de GCP -->
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

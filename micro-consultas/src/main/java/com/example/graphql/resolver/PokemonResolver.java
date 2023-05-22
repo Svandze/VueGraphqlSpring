@@ -6,7 +6,9 @@ import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.example.graphql.model.Entrenador;
 import com.example.graphql.model.Pokemon;
 import com.example.graphql.repository.EntrenadorRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PokemonResolver implements GraphQLResolver<Pokemon> {
 
 	@Autowired
