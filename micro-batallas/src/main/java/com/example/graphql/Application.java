@@ -33,7 +33,7 @@ public class Application {
 
             @Override
             public List<GraphQLError> processErrors(List<GraphQLError> errors) {
-                List<GraphQLError> clientErrors = errors.stream().filter(this::isClientError).collect(Collectors.toList());
+                List<GraphQLError> clientErrors = errors.stream().parallel().filter(this::isClientError).collect(Collectors.toList());
 
                 List<GraphQLError> serverErrors = errors.stream().filter(e -> !isClientError(e)).map(GraphQLErrorAdapter::new).collect(Collectors.toList());
 
