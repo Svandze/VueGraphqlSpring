@@ -13,7 +13,9 @@
     </div>
   </div>
 </li>
-
+<div class="title-image">
+  <img src="./battle.png" >
+  </div>
 <br>
   <button @click="iniciarBatalla" class="btn-pokemon">Iniciar Batalla Pokémon</button>
   <br>  
@@ -23,12 +25,16 @@
       <p>Nombre: {{ pokemon1.nombre }}</p>
       <p>Tipo: {{ pokemon1.tipo }}</p>
       <p>Nivel: {{ pokemon1.nivel }}</p>
+
+      
+    </div>
+    <div  class="pokemon-box-2"  v-if="pokemon1 && pokemon2">
+      <h3>Pokémones en batalla:</h3>
       <h3>Pokemon 2:</h3>
       <p>Nombre: {{ pokemon2.nombre }}</p>
       <p>Tipo: {{ pokemon2.tipo }}</p>
       <p>Nivel: {{ pokemon2.nivel }}</p>
     </div>
-
     <div class="pokemon-box-2" v-if="ganador">
       <h3>Ganador de la batalla:</h3>
       <p>Nombre: {{ ganador.nombre }}</p>
@@ -38,6 +44,7 @@
     </div>
 
   </div>
+  
 </template>
 
 <script>
@@ -115,6 +122,7 @@ export default {
     await this.batallaPokemon();
   }
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -134,36 +142,46 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: #032b5f;
 }
 
 .btn-pokemon {
   background-color: transparent;
-  color: #4CAF50;
+  color: #032b5f;
   padding: 10px 20px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #032b5f;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .btn-pokemon:hover {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #d3f307;
+  color: rgb(1, 1, 1);
 }
+
+
 </style>
 <style>
   .pokemon-box {
-    border: 1px solid #4CAF50;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f2f2f2; /* Color de fondo */
-  color: #333; /* Color del texto */
+    width: 280px;
+      background-color: #032b5f;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      display: inline-block;
+      vertical-align: top;
+      color: #f9f8f8; /* Color del texto */
   }
   .pokemon-box-2 {
-    border: 1px solid #4CAF50;
-  padding: 20px; /* Ajusta el tamaño del padding según tus preferencias */
-  margin: 10px; /* Ajusta el tamaño del margen según tus preferencias */
-  background-color: #d7f2d9; /* Cambia el color de fondo a un verde más claro */
-  color: #333; /* Color del texto */
+    width: 280px;
+      background-color: #032b5f;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      display: inline-block;
+      vertical-align: top;
+      color: #f9f8f8; /* Color del texto */
   }
 </style>
